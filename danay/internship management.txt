@@ -1,0 +1,34 @@
+For Student 
+-------------------
+creat the log in inputtype 
+and then after check up the username and the password 
+redirect to the dashboard sidebar menu 
+ in the sidebar menu 
+creat the button like 
+apply the internship
+see the adivoser
+view avaliable internship 
+submission  report
+ fillbiodata 
+submite project title 
+
+read instraction 
+profile 
+------------------------
+For Adivoser
+----------------------
+approve the project title 
+fill student evaluttion form
+approve internship report 
+----------------------------
+For HeadInternsipCoordinator 
+---------------------------
+post internship
+match studnets to campanies 
+calculate internship budget 
+---------------------------
+manage studnet to advisor assigment 
+ create internship shchedule 
+view submited ecalutiins 
+ 
+ 

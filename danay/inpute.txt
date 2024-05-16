@@ -1,0 +1,31 @@
+import React, { useState } from 'react';
+
+function AddInput() {
+  const [inputs, setInputs] = useState([]); // Array to store input values
+
+  const handleAddInput = () => {
+    setInputs((prevInputs) => [...prevInputs, '']); // Add a new empty string to the inputs array
+  };
+
+  const handleChange = (index, event) => {
+    const updatedInputs = [...inputs]; // Create a copy of the inputs array
+    updatedInputs[index] = event.target.value; // Update the value at the specified index
+    setInputs(updatedInputs); // Update the state with the modified array
+  };
+
+  return (
+    <div>
+      <button onClick={handleAddInput}>Add Input</button>
+      {inputs.map((input, index) => (
+        <input
+          key={index} // Important for performance optimization
+          value={input}
+          onChange={(event) => handleChange(index, event)}
+          placeholder={`Input ${index + 1}`}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default AddInput;
