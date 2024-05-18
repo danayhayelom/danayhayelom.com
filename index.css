@@ -1,0 +1,74 @@
+
+.app{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.info{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+        float:left;
+}
+.info input{
+    width:300px;
+    height:50px;
+    font-size: 20px;
+    padding-left: 20px;
+    margin:20px;
+    border:5px  solid beige ;
+    box-shadow: 5px 5px;
+    transform: rotate(50px);
+}
+.info h1{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    align-items: right;
+}
+.info button{
+    width:320px;
+    height:50px;
+    margin-top: 15px;
+}
+.info button:hover{
+    cursor:pointer;
+}
+.dawit{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+}
+.dawit button{
+    width:320px;
+    height:50px;
+    margin-top: 15px;
+    
+}
+.dawit button:hover{
+    cursor:pointer;
+}
+.hii{
+    width:700px;
+    height:auto;
+    border:1px solid black;
+    margin:10px;
+    display:flex;
+    padding:10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.app h1{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+        float:left;
+}
+.hii h2{
+    margin:20px;
+}
