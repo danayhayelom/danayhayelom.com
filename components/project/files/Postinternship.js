@@ -1,16 +1,46 @@
 import './Post.css'
+import Axios from 'axios'
 import React,{useState} from 'react'
 function Postinternship(){
   const[inputs,setinputs]=useState([]);
   const[ inpute2,setinput2]=useState([]);
   const[inpute3,setinput3]=useState([]);
+  const datass={
+    Department:"",
+    compnayname:"",
+    location:"",
+    numberOfstudent:""
+  }
+  const [submite1,setsubmite1]=useState(datass)
+  const [ submite,setsumbite]=useState(datass);
+  function enter(e){
+    const{name,value}=e.target;
+    setsumbite({...submite,[name]:value});
+  }
+ function enters(e){
+const{name,value}=e.target;
+setsubmite1({...submite1,[name]:value});
+ }
   const handleAddinpute=()=>{
     setinputs((prevInputs) => [...prevInputs, ''])
     setinput2((previnput2)=>[...previnput2,''])
     setinput3((prveinput3)=>[...prveinput3,''])
     
   }
-  
+function handleopp(){
+  const data={
+    DEPARTMENT:submite.Department,
+    COMPANY_NAME:submite.compnayname,
+    LOCATION:submite.location,
+    NUMBER_STUDENT:submite.numberOfstudent,
+
+  }
+  Axios.post("http://192.168.137.173:8080/api/account/register",
+  data
+  ).then((response)=>{
+    console.log(response)
+  })
+}
   const handlechange1=(index,event)=>{
     const updateinputs=[...inputs];
     updateinputs[index]=event.target.value
@@ -31,7 +61,7 @@ function Postinternship(){
       <>
         <div className='list'>
 <label> Choose Department </label>
-  <select className='down-side'>
+  <select className='down-side'name="Department" value={submite.Department } onChange={enter}>
     <option> Industrial Engineering </option>
     <option> Mechanical Engineering </option>
     <option> Civil Engineering </option>
@@ -50,15 +80,21 @@ function Postinternship(){
       <th>number of students</th>
     </tr>
     <tr>
-<td > <input type="text" placeholder="enter company name"/></td>
-<td > <input type="text" placeholder="enter location name"/></td>
-<td > <input type="text" placeholder="enter number of students name"/></td>
+<td > <input type="text" placeholder="enter company name" name="compnayname"
+ value={submite.compnayname} onChange={enter}/></td>
+<td > <input type="text" placeholder="enter location name"  name="location"
+value={submite.location} onChange={enter}/></td>
+<td > <input type="text" placeholder="enter number of students name" name="numberOfstudent"
+value={submite.numberOfstudent} onChange={enter}/></td>
 </tr>
 
     <tr align='center'>
-<td  > <input type="text" placeholder="enter company name"/></td>
-<td > <input type="text" placeholder="enter location name"/></td>
-<td > <input type="text" placeholder="enter number of students name"/></td>
+<td  > <input type="text" placeholder="enter company name"   name="compnayname"value={submite1.compnayname}
+onChange={enters}/></td>
+<td > <input type="text" placeholder="enter location name" name="location"value={submite1.location}
+ onChange={enters}/></td>
+<td > <input type="text" placeholder="enter number of students name" name="numberOfstudent"value={submite1.numberOfstudent} 
+onChange={enters}/></td>
     </tr>    
     <tr>
 <td>{inputs.map((input, index) => (
@@ -91,7 +127,7 @@ function Postinternship(){
   </table>
   
         </div>
-        <button className="btn-2">Submite Opportunities</button>
+        <button className="btn-2" onClick={handleopp}>Submite Opportunities</button>
   
         </>
     )
